@@ -1,11 +1,15 @@
-import Home from './components/Home/Home'
+import { DragDropContext } from "react-beautiful-dnd";
+import Home from "./components/Home/Home";
 
 function App() {
+  let onDragEnd = (result) => {
+    console.log(result);
+  };
   return (
-    <div>
-      <Home/>
-    </div>
-  )
+    <DragDropContext onDragEnd={onDragEnd}>
+      <Home />
+    </DragDropContext>
+  );
 }
 
-export default App
+export default App;
