@@ -1,6 +1,6 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect,  useState } from "react";
 
 function Imagecard({ url, item, selectedArr, setSelectedArr }, ref) {
   console.log(`Imagecard Rerender`);

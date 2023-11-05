@@ -3,15 +3,7 @@ import { FaRegImage } from "react-icons/fa6";
 import Imagecard from "../Imagecard/Imagecard";
 
 import imagesarr from "../../../imagejson.json";
-import {
-  DndContext,
-  KeyboardSensor,
-  MouseSensor,
-  TouchSensor,
-  closestCenter,
-  useSensor,
-  useSensors,
-} from "@dnd-kit/core";
+import { DndContext, closestCenter } from "@dnd-kit/core";
 import {
   SortableContext,
   arraySwap,
