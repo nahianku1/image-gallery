@@ -11,7 +11,6 @@ This is very simple looking image gallery. User can select and delete multiple i
 
 ### Links:
 ---
-##### Github Links: [Project Link](https://github.com/nahianku1/image-gallery)
 ##### Live Link: [Site Link](https://image-gallery-ollyo.web.app)
 
 

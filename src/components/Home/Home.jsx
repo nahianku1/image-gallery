@@ -3,17 +3,22 @@ import { FaRegImage } from "react-icons/fa6";
 import Imagecard from "../Imagecard/Imagecard";
 
 import imagesarr from "../../../imagejson.json";
-import { DndContext, closestCenter } from "@dnd-kit/core";
+import { DndContext, KeyboardSensor, MouseSensor, TouchSensor, closestCenter, useSensor, useSensors } from "@dnd-kit/core";
 import {
   SortableContext,
-  arraySwap,
-  rectSwappingStrategy,
+  arrayMove,
+  rectSortingStrategy,
 } from "@dnd-kit/sortable";
 
 function Home() {
   let [imageArr, setImageArr] = useState(imagesarr); //Declaring imageArr state
   let [selectedArr, setSelectedArr] = useState([]); //Declaring selectedArr state
 
+  const sensors = useSensors(
+    useSensor(MouseSensor),
+    useSensor(TouchSensor),
+    useSensor(KeyboardSensor)
+  );
   //Delete function
   let handleDelete = () => {
     //Filtering all items in selected array will be removed
@@ -36,7 +41,7 @@ function Home() {
       setImageArr((arr) => {
         let oldIndex = arr.findIndex((item) => item.id === active.id);
         let newIndex = arr.findIndex((item) => item.id === over.id);
-        return arraySwap(arr, oldIndex, newIndex);
+        return arrayMove(arr, oldIndex, newIndex);
       });
     }
   };
@@ -84,9 +89,13 @@ function Home() {
         {/* Image Grid start */}
         <div className="grid gap-[15px] p-[30px] grid-cols-[repeat(auto-fit,minmax(130px,1fr))] [grid-auto-rows:1fr]">
           {/* wrapping  SortableContext with DndContext context component */}
-          <DndContext collisionDetection={closestCenter} onDragEnd={onDragEnd}>
+          <DndContext
+            sensors={sensors}
+            collisionDetection={closestCenter}
+            onDragEnd={onDragEnd}
+          >
             {/* wrapping  Imagecard with SortableContext context component */}
-            <SortableContext items={imageArr} strategy={rectSwappingStrategy}>
+            <SortableContext items={imageArr} strategy={rectSortingStrategy}>
               {imageArr.map((item, index) =>
                 index === 0 ? (
                   <Imagecard
