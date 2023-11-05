@@ -1,8 +1,17 @@
-# React + Vite
+# Image Gallery:
+---
+This is very simple looking image gallery. User can select and delete multiple images. One feature Image is there and user can easily sort images.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Technology and packages used:
 
-Currently, two official plugins are available:
+- React JS
+- DnD kit 
+- React-icons
+- Firebase hosting
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Links:
+---
+##### Github Links: [Project Link](https://github.com/nahianku1/image-gallery)
+##### Live Link: [Site Link](https://image-gallery-ollyo.web.app)
+
+
